@@ -28,7 +28,7 @@ function Header() {
             {/* end -- content  */}
             <div className="end_header flex text-[#ffffff] space-x-2 ml-[330px] cursor-pointer font-semibold">
                 <div className="login text-[19px] hover:text-[#f7b733]">Log in</div>
-                <div className="job_post text-[20px] bg-[#f7b733] hover:bg-[#4abdac] h-[35px] w-[110px] pl-2 rounded-sm">
+                <div className="job_post text-[20px] bg-[#f7b733] hover:bg-[#4abdac] h-[35px] w-[110px] pl-2 rounded-md">
                     <span className="txt hover:text-[#f7b733]  text-[white]"> Post A Job</span>
                 </div>
             </div>

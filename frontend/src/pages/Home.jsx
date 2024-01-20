@@ -7,6 +7,9 @@ import { CiBookmark } from "react-icons/ci";
 import { FaBookReader } from "react-icons/fa";
 import { HiLightBulb } from "react-icons/hi";
 import { PiSuitcaseSimpleFill } from "react-icons/pi";
+import Footer from "../components/Footer/Footer";
+import { FaStar } from "react-icons/fa6";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 
 function Home() {
@@ -35,31 +38,31 @@ function Home() {
     <div className="content_section  ">
       <div className="job_search_section border-b-[1px] border-[#c2c0c4] mt-11 ">
         <div className="job_container flex ml-[300px] space-x-10 mb-8 ">
-          <div className="Key_search border-2 ">
-            <input type="text" placeholder="Job_title, Keyword, Company" className="gg text-center  h-[44px] w-[300px] rounded-md" />   
+          <div className="Key_search border-2 hover:border-[#4abdac]">
+            <input type="text" placeholder="Job_title, Keyword, Company" className="gg text-center  h-[44px] w-[350px] rounded-md" />   
           </div>
-          <div className="location_search border-[1px]">
+          <div className="location_search border-[2px] hover:border-[#4abdac]">
             <input type="text" placeholder="Location, City, State" className="id text-center h-[44px] w-[300px] rounded-md "/>   
           </div>
-          <div className="search_button bg-[#f7b733] text-[#282929] hover:bg-[#4abdac] hover:text-[white] text-[25px] font-semibold text-center pt-[5px] w-[150px] h-auto rounded-md">
+          <div className="search_button bg-[#f7b733]  text-[#282929] hover:bg-[#4abdac] hover:text-[white] text-[25px] font-semibold text-center pt-[5px] w-[150px] h-auto rounded-md">
             <button  className="bt ">Search</button>
           </div>
         </div>
       </div>
       <div className="jobs_boxes flex space-x-3 ml-[190px] mt-7 ">
         <div className="box1 w-[40%] cursor-pointer  ">
-          <div className="inner_job_headline p-5 h-[auto] border-[1px] shadow-xl pb-5 rounded-[10px] bg-[#f6f3f3] border-[#c2c0c4] mb-4">
+          <div className="inner_job_headline p-5 h-[auto] border-[1px] shadow-xl pb-5 rounded-[10px] bg-[#f6f3f3] border-[#c2c0c4] mb-2">
             <div className="job_title font-semibold text-[20px]"><span>Web Developer</span></div>
             <div className="job_company text-[18px]"><p>Infosys</p></div>
             <div className="Job_location text-[18px]"><span>Hyderabad</span></div>
             <div className="Job_salary   mt-2 text-[white] flex gap-2">
-              <p className="border-[1px] flex border-[#c2c0c4] bg-[#4abdac] w-[auto] p-[3px] rounded-md"><LiaRupeeSignSolid />45000 -60000 a month</p>
-              <p className="fl  border-[#c2c0c4] bg-[#4abdac] p-[3px] rounded-md">Full time</p>
-              <p className="border-[#c2c0c4] bg-[#4abdac] p-[3px] rounded-md">Fresher</p>
+              <p className="border-[1px] flex border-[#c2c0c4] bg-[#4abdac] w-[auto] pl-[5px] pr-[7px] rounded-md"><LiaRupeeSignSolid className="mt-[4px] " />45000 -60000 a month</p>
+              <p className="fl  border-[#c2c0c4] bg-[#4abdac] pl-[5px] pr-[7px] rounded-md">Full time</p>
+              <p className="border-[#c2c0c4] bg-[#4abdac] pl-[5px] pr-[7px] rounded-md">Fresher</p>
             </div>
             <div className="job_points mt-[50px]">
               <p className="desc flex gap-3">
-              <LiaHandPointRight  className="mt-[5px]"/>this is frontend job
+              <LiaHandPointRight  className="mt-[5px] "/>this is frontend job
                </p>
               <p className="desc flex gap-3">
               <LiaHandPointRight  className="mt-[5px]"/>this is frontend job
@@ -190,8 +193,15 @@ function Home() {
           </div>
           <div className="job_company_name text-center text-[18px]"><span>Infosys</span></div>
           <div className="job_location text-center text-[18px]"><p>Hyderabad</p></div>
-          <div className="apply_button gap-5 mt-[35px] ml-[300px] flex ">
-            <CiBookmark className="w-[40px] h-[40px]  bg-[#4abdac] text-[white] p-[5px] rounded-md "/>
+          <div className="apply_button gap-4 mt-[20px] ml-[30px] flex ">
+            <div className="stars flex mt-5 gap-[3px] underline-offset-auto cursor-pointer">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaRegStarHalfStroke />
+            </div>
+            <CiBookmark className="w-[40px] h-[40px] ml-[180px] bg-[#4abdac] text-[white] p-[5px] rounded-md "/>
             <button className="bg-[#f7b733] text-[18px] p-2  hover:bg-[#4abdac] hover:text-[white] rounded-lg font-bold">Apply Now</button>
           </div>
           <div className=" w-[529px] ml-[-19px]   border-[#9f9d9d]  shadow-xl pb-5 "></div> {/* border */}
@@ -204,10 +214,10 @@ function Home() {
                 <span className="f font-medium text-[18px] text-[#535151]">Skills :</span>
               </div>
               <div className="skill_details flex ml-[30px] gap-3 mt-3">
-                <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Java</p>
-                <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Java</p>
-                <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Java</p>
-                <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Java - python</p>
+                <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Java</p>
+                <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Java</p>
+                <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Java</p>
+                <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Java - python</p>
               </div>
               <div className="education_section">
                 <div className="education flex gap-3 mt-3">
@@ -215,7 +225,7 @@ function Home() {
                 <span className="Ed font-medium text-[18px] text-[#535151]">Education :</span>
                 </div>
                 <div className="education_details flex ml-[30px] gap-3 mt-3">
-                <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Bachelor's Degree</p>
+                <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Bachelor's Degree</p>
                 </div>
               </div>
             </div>
@@ -228,7 +238,7 @@ function Home() {
               
           </div>
             <div className="job_type_details flex ml-[30px] gap-3 mt-3">
-              <p className="bg-[#4abdac] text-[#f2e7e7] p-[3px] rounded-md font-semibold text-[17px]"> Permanent</p>
+              <p className="bg-[#4abdac] text-[#f2e7e7] pl-[5px] pr-[7px] rounded-md font-semibold text-[17px]"> Permanent</p>
             </div>
           
           <div className=" w-[529px] ml-[-19px] mt-4  border-[#9f9d9d] border-b-[1px]"></div> {/* Border */}
@@ -238,6 +248,22 @@ function Home() {
             <div className="job_para">
               <p>Our Summer internships will start in May 2024 and will be 10-12 weeks in duration.
 
+                  Please complete your application before Jan. 19, 2024.
+
+
+                  Note: By applying to this position you will have an opportunity to share your preferred working location from the following: Bangalore, Karnataka, India; Hyderabad, Telangana, India; Pune, Maharashtra, India.
+                  Minimum qualifications:
+                  Currently enrolled in a Bachelor's program, majoring or intending to major in Computer Science or related technical field.
+                  Experience in one or more general purpose programming languages.
+                  Ability to communicate in English fluently.
+                  Please complete your application before Jan. 19, 2024.
+
+
+                  Note: By applying to this position you will have an opportunity to share your preferred working location from the following: Bangalore, Karnataka, India; Hyderabad, Telangana, India; Pune, Maharashtra, India.
+                  Minimum qualifications:
+                  Currently enrolled in a Bachelor's program, majoring or intending to major in Computer Science or related technical field.
+                  Experience in one or more general purpose programming languages.
+                  Ability to communicate in English fluently.
                   Please complete your application before Jan. 19, 2024.
 
 
@@ -258,6 +284,7 @@ function Home() {
       </div>
     </div>
   </div>
+  <Footer/>
     </>
   )
 }
