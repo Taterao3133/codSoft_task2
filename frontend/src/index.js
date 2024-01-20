@@ -1,14 +1,23 @@
 import React from 'react';
+// import  { createContext,} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+// const MyContext = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    //  <MyContext.Provider>
+    <BrowserRouter>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </BrowserRouter>
+    // </MyContext.Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

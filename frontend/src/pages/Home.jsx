@@ -15,7 +15,7 @@ import { FaRegStarHalfStroke } from "react-icons/fa6";
 function Home() {
   return (
     <>
-    <Header/>
+  
   <div className="body bg-[#f2f0f4]">
     <div className="container relative group ">
         <img src={img} alt="" className="object-cover w-full h-full opacity-90 shadow-xl" />
@@ -284,7 +284,7 @@ function Home() {
       </div>
     </div>
   </div>
-  <Footer/>
+  
     </>
   )
 }
