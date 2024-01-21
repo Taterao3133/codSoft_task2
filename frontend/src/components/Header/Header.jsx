@@ -1,7 +1,9 @@
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Login from "../../pages/Login";
-import { useState } from "react";
+ import { Link  as ScrollLink, animateScroll} from "react-scroll";
+
 
 // colors  => ##f2f0f4, #f7b733 , #fc4a1a ,#4abdac
 
@@ -11,6 +13,7 @@ import { useState } from "react";
 function Header() {
 
     const [isOpenLogin, setLoginOpen] = useState(false);
+    const [isSticky, setSticky] = useState(false);
 
     const openLogin = () => {
         console.log('Opening chat...');
@@ -21,8 +24,29 @@ function Header() {
         console.log('Closing chat...');
         setLoginOpen(false);
       };
+      useEffect(() => {
+        const handleScroll = () => {
+          const scrollPosition = window.scrollY;
+          const threshold = 100;
+    
+          setSticky(scrollPosition > threshold);
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+      const scrollToSearchJob = () => {
+        setTimeout(() => {
+          animateScroll.scrollTo(document.getElementById("search_jobs").offsetTop - 130, {
+            duration: 500,
+          });
+        }, 50); 
+      };
+
   return (<>
-    <div className="container bg-[#4abdac] border-b-4 ">   
+    <div className={`container bg-[#4abdac] border-b-4 ${isSticky ? "fixed top-0 w-full z-50" : ""}`}>   
         <div className="main_header flex pt-7">  <Link to='/'>
             <div className="header_log flex space-x-2 -mt-2 ml-16">
                 <div className="logo ">
@@ -35,8 +59,8 @@ function Header() {
             </div></Link>
             {/* middle -- content */}
             <div className="middle_header flex ml-[280px] space-x-5 text-[20px] font-semibold cursor-pointer text-[#f2f0f4] ">
-                <p className="hover:text-[#f7b733]">Home</p>
-                <p className="hover:text-[#f7b733]">Browse Job </p>
+                <p className="hover:text-[#f7b733]"><Link to='/'>Home </Link></p>
+                <p className="hover:text-[#f7b733]" onClick={scrollToSearchJob}>Search Job  </p>
                 <p className="hover:text-[#f7b733]">Pages</p>
                 <p className="hover:text-[#f7b733]">Blog</p>
                 <p className="hover:text-[#f7b733]">Contact</p>

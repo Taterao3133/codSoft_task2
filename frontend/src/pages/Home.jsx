@@ -1,5 +1,4 @@
 
-import Header from "../components/Header/Header"
 import img from "./home.jpg"
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { LiaHandPointRight } from "react-icons/lia";
@@ -7,7 +6,7 @@ import { CiBookmark } from "react-icons/ci";
 import { FaBookReader } from "react-icons/fa";
 import { HiLightBulb } from "react-icons/hi";
 import { PiSuitcaseSimpleFill } from "react-icons/pi";
-import Footer from "../components/Footer/Footer";
+
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
@@ -35,10 +34,10 @@ function Home() {
           </div>
         </div>
       </div>
-    <div className="content_section  ">
+    <div className="content_section  " id="search_jobs">
       <div className="job_search_section border-b-[1px] border-[#c2c0c4] mt-11 ">
         <div className="job_container flex ml-[300px] space-x-10 mb-8 ">
-          <div className="Key_search border-2 hover:border-[#4abdac]">
+          <div className="Key_search border-2  hover:border-[#4abdac]">
             <input type="text" placeholder="Job_title, Keyword, Company" className="gg text-center  h-[44px] w-[350px] rounded-md" />   
           </div>
           <div className="location_search border-[2px] hover:border-[#4abdac]">
