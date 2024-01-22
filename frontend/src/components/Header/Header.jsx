@@ -2,7 +2,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Login from "../../pages/Login";
- import { Link  as ScrollLink, animateScroll} from "react-scroll";
+ import {  animateScroll} from "react-scroll";
 
 
 // colors  => ##f2f0f4, #f7b733 , #fc4a1a ,#4abdac
@@ -16,12 +16,10 @@ function Header() {
     const [isSticky, setSticky] = useState(false);
 
     const openLogin = () => {
-        console.log('Opening chat...');
         setLoginOpen(true);
       };
       
       const closeLogin = () => {
-        console.log('Closing chat...');
         setLoginOpen(false);
       };
       useEffect(() => {
@@ -60,9 +58,8 @@ function Header() {
             {/* middle -- content */}
             <div className="middle_header flex ml-[280px] space-x-5 text-[20px] font-semibold cursor-pointer text-[#f2f0f4] ">
                 <p className="hover:text-[#f7b733]"><Link to='/'>Home </Link></p>
-                <p className="hover:text-[#f7b733]" onClick={scrollToSearchJob}>Search Job  </p>
+                <p className="hover:text-[#f7b733]" onClick={scrollToSearchJob}>Search_Job  </p>
                 <p className="hover:text-[#f7b733]">Pages</p>
-                <p className="hover:text-[#f7b733]">Blog</p>
                 <p className="hover:text-[#f7b733]">Contact</p>
 
             </div>

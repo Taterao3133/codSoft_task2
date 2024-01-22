@@ -9,9 +9,22 @@ import { PiSuitcaseSimpleFill } from "react-icons/pi";
 
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 function Home() {
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+
+
+  const handleLabelClick = () => {
+    document.getElementById('resumeInput').click();
+  };
   return (
     <>
   
@@ -29,24 +42,43 @@ function Home() {
           <div className="slogan text-[24px] text-[#f2eded]">
             <span>we Providing Best job list from all over India</span>
           </div>
-          <div className="resume_uploder font-medium text-[20px] bg-[#f7b733] w-[290px] h-auto text-center p-2 mt-3 rounded-md">
-            <button className="upload_resume hover:text-[white]">Upload Your Resume</button>
+          <div className="resume_uploder font-medium text-[20px] bg-[#f7b733] w-[290px] h-auto text-center p-2 mt-3  cursor-pointer rounded-md">
+            <p className="upload_resume hover:text-[white] "    htmlFor="resumeInput" onClick={handleLabelClick}>Upload Your Resume</p>
+            <input
+          type="file"
+          name="resume"
+          id="resumeInput"
+          accept=".pdf, .doc, .docx"
+          className="t text-[100%] p-[10px] w-full box-border hidden"
+          onChange={handleFileChange}
+        />
+               
           </div>
         </div>
       </div>
+  {/* search jobs section */}
     <div className="content_section  " id="search_jobs">
       <div className="job_search_section border-b-[1px] border-[#c2c0c4] mt-11 ">
         <div className="job_container flex ml-[300px] space-x-10 mb-8 ">
-          <div className="Key_search border-2  hover:border-[#4abdac]">
+          <div className="Key_search border-2 shadow-md hover:border-[#4abdac]">
             <input type="text" placeholder="Job_title, Keyword, Company" className="gg text-center  h-[44px] w-[350px] rounded-md" />   
           </div>
-          <div className="location_search border-[2px] hover:border-[#4abdac]">
+          <div className="location_search border-[2px] shadow-md hover:border-[#4abdac]">
             <input type="text" placeholder="Location, City, State" className="id text-center h-[44px] w-[300px] rounded-md "/>   
           </div>
-          <div className="search_button bg-[#f7b733]  text-[#282929] hover:bg-[#4abdac] hover:text-[white] text-[25px] font-semibold text-center pt-[5px] w-[150px] h-auto rounded-md">
+          <div className="search_button shadow-md cursor-pointer bg-[#f7b733]  text-[#282929] hover:bg-[#4abdac] hover:text-[white] text-[25px] font-semibold text-center pt-[5px] w-[150px] h-auto rounded-md">
             <button  className="bt ">Search</button>
           </div>
         </div>
+      </div>
+      <div className="filter_search mt-3 flex gap-4 ml-[300px] text-[19px] font-semibold " >
+        <p className="filter border-2 border-red cursor-pointer  bg-white shadow-md hover:text-white hover:bg-[#5ecaba]  pl-[4px]  pr-[4px] pb-0 pt-0 rounded-md">Freshness </p>
+        <p className="filter border-2 border-red cursor-pointer  bg-white shadow-md hover:text-white hover:bg-[#5ecaba] pl-[3px] pr-[3px] rounded-md">Loaction</p>
+        <p className="filter border-2 border-red cursor-pointer  bg-white shadow-md hover:text-white hover:bg-[#5ecaba] pl-[3px] pr-[3px] rounded-md">Work type</p>
+        <p className="filter border-2 border-red cursor-pointer  bg-white shadow-md hover:text-white hover:bg-[#5ecaba] pl-[3px] pr-[3px] rounded-md">Experienc</p>
+        <p className="filter border-2 border-red cursor-pointer  bg-white shadow-md hover:text-white hover:bg-[#5ecaba] pl-[3px] pr-[3px] rounded-md">Freshness</p>
+        <p className="filter border-2 border-red  cursor-pointer   bg-white shadow-md hover:text-white hover:bg-[#5ecaba] pl-[3px] pr-[3px] rounded-md">Freshness</p>
+
       </div>
       <div className="jobs_boxes flex space-x-3 ml-[190px] mt-7 ">
         <div className="box1 w-[40%] cursor-pointer  ">
@@ -201,7 +233,7 @@ function Home() {
               <FaRegStarHalfStroke />
             </div>
             <CiBookmark className="w-[40px] h-[40px] ml-[180px] bg-[#4abdac] text-[white] p-[5px] rounded-md "/>
-            <button className="bg-[#f7b733] text-[18px] p-2  hover:bg-[#4abdac] hover:text-[white] rounded-lg font-bold">Apply Now</button>
+            <button className="bg-[#f7b733] text-[18px] p-2  hover:bg-[#4abdac] hover:text-[white] rounded-lg font-bold"><Link to='/job_apply'>Apply Now </Link></button>
           </div>
           <div className=" w-[529px] ml-[-19px]   border-[#9f9d9d]  shadow-xl pb-5 "></div> {/* border */}
 
